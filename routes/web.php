@@ -29,7 +29,7 @@ Route::middleware([
     Route::get('/dashboard', [AdminController::class,'index'])->name('dashboard');
     Route::get('/view_category', [AdminController::class,'view_category'])->name('view_category');
     Route::post('/store_category', [AdminController::class, 'store_category'])->name('store_category');
-    Route::post('/delete_category', [AdminController::class, 'delete_category'])->name('delete_category');
+    Route::get('/delete_category/{id}', [AdminController::class, 'delete_category'])->name('delete_category');
 
 
 //    Route::get('/redirect',[HomeController::class,'redirect']);

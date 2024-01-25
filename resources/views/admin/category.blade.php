@@ -63,7 +63,7 @@
                                         <td>{{$category->id}}</td>
                                         <td>{{$category->name}}</td>
                                         <td>{{$category->created_at->diffForHumans()}}</td>
-                                        <td><a class="btn btn-danger" href="{{route('delete_category',$category->id)}}">Delete</a></td>
+                                        <td><a onclick="return confirm('Are you sure you want to delete')" class="btn btn-danger" href="{{route('delete_category',$category->id)}}">Delete</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
