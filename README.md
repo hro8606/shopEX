@@ -1,2 +1,0 @@
-# shopEX
-shop laravel project 
