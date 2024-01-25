@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -27,6 +28,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('admin.home');
     })->name('dashboard');
+
+
+    Route::get('/view_category', [AdminController::class,'index'])->name('view_category');
+    Route::post('/store_category', [AdminController::class, 'store'])->name('store_category');
+
+
 //    Route::get('/redirect',[HomeController::class,'redirect']);
 });
 
