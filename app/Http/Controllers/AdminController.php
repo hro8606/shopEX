@@ -10,6 +10,7 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
+//    opening the categories page , inside this page we can add the categories to db
     public function index()
     {
         return view('admin.category');
