@@ -13,7 +13,14 @@ class AdminController extends Controller
 //    opening the categories page , inside this page we can add the categories to db
     public function index()
     {
-        return view('admin.category');
+        return view('admin.home');
+    }
+
+    public function view_category()
+    {
+        $categories = Category::all();
+
+        return view('admin.category', compact('categories'));
     }
 
     /**
@@ -28,6 +35,11 @@ class AdminController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
+    {
+        //
+    }
+
+    public function store_category(Request $request): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         $post = new Category();
         $post->name = $request->category;
