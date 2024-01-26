@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
@@ -82,7 +83,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Product $product):View
     {
 
         $category = Category::all();
@@ -107,8 +108,15 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $image_name = $product->image;
-        dd($image_name);
+
 //        need to delete image also it exist
+        if(Storage::exists('public/product/'.$image_name)){
+            Storage::delete('public/product/'.$image_name);
+            /*
+                Delete Multiple files this way
+                Storage::delete(['upload/test.png', 'upload/test2.png']);
+            */
+        }
 
         $product->delete();
         return redirect(route('view_product'));

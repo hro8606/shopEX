@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('admin.head')
-</head>
-<body>
-<div class="container-scroller">
-    <!-- partial:partials/_sidebar.html -->
-    @include('admin.sidebar')
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
-        @include('admin.navbar')
-        <!-- partial -->
+@extends('admin.home')
+
+@section('content')
+
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="container">
@@ -26,7 +16,7 @@
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Adding New Product</h4>
+                                <h4 class="card-title">Adding New Product34343434</h4>
                                 <p class="card-description"> Please add the product details </p>
                                 <form class="forms-sample" method="post" action="{{ route('store_product') }}"
                                       enctype="multipart/form-data">
@@ -92,14 +82,4 @@
                 </div>
             </div>
         </div>
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-</div>
-@include('admin.footer')
-
-@include('admin.script')
-<script src="/admin/assets/js/file-upload.js"></script>
-
-</body>
-</html>
+@endsection

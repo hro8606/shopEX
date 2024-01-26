@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('admin.head')
-</head>
-<body>
-<div class="container-scroller">
-    <!-- partial:partials/_sidebar.html -->
-    @include('admin.sidebar')
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
-        @include('admin.navbar')
-        <!-- partial -->
-        <div class="main-panel">
+@extends('admin.home')
+
+@section('content')
+
+<div class="main-panel">
             <div class="content-wrapper">
                 <div class="container">
                     @if(session('status'))
@@ -55,13 +45,12 @@
 {{--                                            <img class="img_size" src="../storage/{{$prod->image}}">--}}
                                             <img src="{{ url('storage/product/'.$prod->image) }}" alt="Image" title="" />
                                             </td>
-                                        <td>
-{{--                                            <a  class="btn btn-warning" href="{{route('edit_category',$prod->id)}}">Edit</a>--}}
-{{--                                            <a onclick="return confirm('Are you sure you want to delete')" class="btn btn-danger" href="{{route('delete_product',$prod->id)}}">Delete</a>--}}
+                                        <td style="display: flex">
+                                            <a class="btn btn-warning mr-1" href="{{route('product.edit',$prod->id)}}">Edit</a>
                                             <form method="post" action="{{ route('product.destroy',$prod->id) }}" >
                                                 @csrf
                                                 @method('delete')
-                                                <button onclick="return confirm('Are you sure you want to delete')" class="btn btn-danger" type="submit">
+                                                <button onclick="return confirm('Are you sure you want to delete')" class="btn btn-danger ml-1" type="submit">
                                                     Delete
                                                 </button>
                                             </form>
@@ -77,13 +66,5 @@
                 </div>
             </div>
         </div>
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-</div>
-@include('admin.footer')
 
-@include('admin.script')
-
-</body>
-</html>
+@endsection

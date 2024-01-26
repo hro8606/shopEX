@@ -13,7 +13,7 @@ class AdminController extends Controller
 //    opening the categories page , inside this page we can add the categories to db
     public function index()
     {
-        return view('admin.home');
+        return view('admin.main');
     }
 
     public function view_category()

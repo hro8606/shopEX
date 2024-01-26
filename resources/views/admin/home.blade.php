@@ -12,7 +12,8 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <!-- partial -->
-        @include('admin.main')
+{{--        @include('admin.main')--}}
+        @yield('content')
         <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

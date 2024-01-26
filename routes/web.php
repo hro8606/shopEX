@@ -39,9 +39,8 @@ Route::middleware([
     Route::post('/store_product', [ProductController::class,'store'])->name('store_product');
 
 
-    Route::get('/edit_category', [ProductController::class, 'edit'])->name('edit_category');
-//    Route::delete('/delete_product', [ProductController::class, 'destroy'])->name('product.destroy');
-    Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
 //    Route::get('/redirect',[HomeController::class,'redirect']);
 });

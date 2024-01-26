@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('admin.head')
-    <style type="text/css">
-        .div_center {
-            text-align: center;
-            padding-top: 40px;
-        }
-    </style>
-</head>
-<body>
-<div class="container-scroller">
-    <!-- partial:partials/_sidebar.html -->
-    @include('admin.sidebar')
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
-        @include('admin.navbar')
-        <!-- partial -->
+@extends('admin.home')
 
-        <div class="main-panel">
-            <div class="content-wrapper">
+@section('content')
+
+<div class="main-panel">
+    <div class="content-wrapper">
                 <div class="container">
                     @if(session('status'))
                         <div class="row">
@@ -75,12 +58,4 @@
             </div>
         </div>
 
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-</div>
-@include('admin.footer')
-
-@include('admin.script')
-</body>
-</html>
+@endsection
