@@ -81,6 +81,21 @@
             </div>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#pr-oducts" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+                <span class="menu-title">Products</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="pr-oducts">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{route('add_product')}}">Add Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('view_product')}}">Show Products</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('view_category')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>

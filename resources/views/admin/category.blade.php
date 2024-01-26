@@ -46,10 +46,10 @@
                             </form>
                         </div>
                     </div>
-                    <div class="row col-md-12 ">
-                        <div class="row">
+                    <div class="row col-md-12 card card-body">
+                        <div class="row table-responsive">
                             <h2>All categories </h2>
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>Category Name</th>
