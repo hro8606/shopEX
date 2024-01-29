@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -34,22 +35,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request['image']);
 
-//        $this->validate(request(),[
-//            put fields to be validated here
-//        ]);
-
-//        $file = $request->file('image');
-//        if($file)
-//        {
-//            $image  = $request->image;
-//
-//            $extension = $file[0]->clientExtension();
-//            $imageName = time().'.'.$extension;
-//            $file[0]->move('product',$imageName);
-//            $product->image = $imageName;
-//        }
         $product = new Product();
 
         $product->title = $request['title'];
@@ -98,7 +84,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->except('image'));
+
+        if ($request->file('image')){
+            Storage::disk('public')->delete("product/".$product->image);
+
+            $this->storeAttachment($request,$product);
+        }
+
+        return redirect(route('view_product'));
     }
 
     /**

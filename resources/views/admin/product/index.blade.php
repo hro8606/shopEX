@@ -4,7 +4,7 @@
 
 <div class="main-panel">
             <div class="content-wrapper">
-                <div class="container">
+                <div class="">
                     @if(session('status'))
                         <div class="row">
                             <div class="alert alert-success">
@@ -26,6 +26,7 @@
                                     <th>price</th>
                                     <th>discount_price</th>
                                     <th>Created At</th>
+                                    <th>updated At</th>
                                     <th>image</th>
                                     <th>Actions</th>
                                 </tr>
@@ -41,6 +42,7 @@
                                         <td>{{$prod->price}}</td>
                                         <td>{{$prod->discount_price}}</td>
                                         <td>{{$prod->created_at->diffForHumans()}}</td>
+                                        <td>{{$prod->updated_at->diffForHumans()}}</td>
                                         <td>
 {{--                                            <img class="img_size" src="../storage/{{$prod->image}}">--}}
                                             <img src="{{ url('storage/product/'.$prod->image) }}" alt="Image" title="" />
