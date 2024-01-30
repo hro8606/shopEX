@@ -19,7 +19,9 @@ use App\Http\Controllers\HomeController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('/');
+//products routes for regular users
+Route::get('/product_details/{product}', [HomeController::class,'showProduct'])->name('product_details');
 
 Route::middleware([
     'auth:sanctum',
