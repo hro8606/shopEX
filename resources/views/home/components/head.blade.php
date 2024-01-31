@@ -17,3 +17,5 @@
 <link href="{{asset("home/css/style.css")}}" rel="stylesheet" />
 <!-- responsive style -->
 <link href="{{asset("home/css/responsive.css")}}" rel="stylesheet" />
+{{--slider css--}}
+<link href="{{asset("home/css/slider.css")}}" rel="stylesheet" />
