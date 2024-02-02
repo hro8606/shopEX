@@ -19,3 +19,9 @@
 <link href="{{asset("home/css/responsive.css")}}" rel="stylesheet" />
 {{--slider css--}}
 <link href="{{asset("home/css/slider.css")}}" rel="stylesheet" />
+{{--product_details css--}}
+<link href="{{asset("home/css/productDetails.css")}}" rel="stylesheet" />
+{{--lightbox css--}}
+<link href="{{asset("home/css/lightbox/lightbox.css")}}" rel="stylesheet" />
+{{--gallery css--}}
+<link href="{{asset("home/css/gallery.css")}}" rel="stylesheet" />

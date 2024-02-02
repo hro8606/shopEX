@@ -23,6 +23,9 @@ Route::get('/',[HomeController::class,'index'])->name('/');
 //products routes for regular users
 Route::get('/product_details/{product}', [HomeController::class,'showProduct'])->name('product_details');
 
+Route::get('/gallery',[HomeController::class,'indexGallery'])->name('gallery.index');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

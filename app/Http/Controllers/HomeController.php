@@ -17,6 +17,12 @@ class HomeController extends Controller
         return view('home.userpage')->with(compact('product'));
     }
 
+    public function indexGallery(){
+
+//        return view('home.userpage')->with(compact('images'));
+        return view('home.gallery');
+    }
+
     public function redirect()
     {
         $usertype = Auth::user()->usertype;
@@ -33,6 +39,7 @@ class HomeController extends Controller
 
     public function showProduct(Product $product):View
     {
+//        return view('home.product_details',compact('product'));
         return view('home.product_details',compact('product'));
     }
 

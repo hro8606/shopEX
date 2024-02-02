@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer_section">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -23,9 +23,7 @@
                                     <ul>
                                         <li><a href="{{route("/")}}">Home</a></li>
                                         <li><a href="#">About</a></li>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="#">Testimonial</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="{{route('gallery.index')}}">GALLERY</a></li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
                                 </div>
@@ -70,9 +68,9 @@
 </footer>
 
 <div class="cpy_">
-    <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+    <p class="mx-auto">© 2024 All Rights Reserved By <a href="#">Me</a><br>
 
-        Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+{{--        Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>--}}
 
     </p>
 </div>

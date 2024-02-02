@@ -8,3 +8,5 @@
 <script src="{{asset("home/js/custom.js")}}"></script>
 <!-- slider js -->
 <script src="{{asset("home/js/slider.js")}}"></script>
+<!-- lightbox js -->
+<script src="{{asset("home/js/lightbox/lightbox.js")}}"></script>
