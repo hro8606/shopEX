@@ -26,19 +26,19 @@
                                 @method('put')
 
                                 <div class="form-group">
-                                    <label for="pr_title">Product Title</label>
+                                    <label for="pr_title">Product Title<span>*</span></label>
                                     <input type="text" class="form-control" id="pr_title"
                                            placeholder="Name" name="title" required="" autofocus
                                            value="{{$product->title}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="pr_description">Product Description</label>
+                                    <label for="pr_description">Product Description<span>*</span></label>
                                     <input type="text" class="form-control" id="pr_description"
                                            placeholder="Description" name="description" required=""
                                            value="{{$product->description}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="pr_price">Product Price</label>
+                                    <label for="pr_price">Product Price<span>*</span></label>
                                     <input type="number" min="0" class="form-control" id="pr_price"
                                            placeholder="Write a price" name="price" value="{{$product->price}}"
                                            required="">
@@ -50,7 +50,7 @@
                                            value="{{$product->discount_price}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="pr_quantity">Product Quantity</label>
+                                    <label for="pr_quantity">Product Quantity<span>*</span></label>
                                     <input type="number" min="0" class="form-control" id="pr_quantity"
                                            placeholder="Quantity" name="quantity" value="{{$product->quantity}}"
                                            required="">
@@ -58,7 +58,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="exampleSelect">Product Category</label>
+                                    <label for="exampleSelect">Product Category<span>*</span></label>
                                     <select class="form-control" id="exampleSelect" name="category" required="">
                                         <option value="" selected="">Add a category here</option>
                                         @foreach($category as $cat)

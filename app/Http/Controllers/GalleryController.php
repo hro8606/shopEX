@@ -42,11 +42,12 @@ class GalleryController extends Controller
     {
         $gallery = new Gallery();
 
+
         $gallery->title = $request['title'];
-        $gallery->author = $request['topic'];
+        $gallery->author = $request['author'];
         $gallery->description = $request['description'];
-        $gallery->topic = $request['category'];
-        $gallery->add_in_slider = $request['add_in_slider'];
+        $gallery->topic = $request['topic'];
+        $gallery->add_in_slider = ($request['add_in_slider']) ? $request['add_in_slider'] : 0;
 
         // add other fields
         $gallery->save();
@@ -73,7 +74,11 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+        $category = Category::all();
+        return view('admin.gallery.edit', [
+            'gallery' => $gallery,
+            'category' => $category,
+        ]);
     }
 
     /**
@@ -81,7 +86,15 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        $gallery->update($request->except('image'));
+
+        if ($request->file('image')){
+            Storage::disk('public')->delete("gallery/".$gallery->image);
+
+            $this->storeAttachment($request,$gallery);
+        }
+
+        return redirect(route('gallery.index'));
     }
 
     /**
@@ -89,7 +102,15 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $image_name = $gallery->image;
+
+//        need to delete image also it exist
+        if(Storage::exists('public/gallery/'.$image_name)){
+            Storage::delete('public/gallery/'.$image_name);
+        }
+
+        $gallery->delete();
+        return redirect(route('gallery.index'));
     }
 
     private function storeAttachment(Request $request, Gallery $gallery)

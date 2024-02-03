@@ -16,27 +16,29 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Adding Gallery Item </h4>
-                            <p class="card-description"> Please add the Item details </p>
-                            <form class="forms-sample" method="post" action="{{ route('gallery.store') }}"
+                            <h4 class="card-title">Editing Gallery Item </h4>
+                            <p class="card-description"> Please edit the Item details </p>
+                            <form class="forms-sample" method="post" action="{{ route('gallery.update',$gallery->id) }}"
                                   enctype="multipart/form-data">
 
                                 @csrf
+                                @method('put')
+
                                 <div class="form-group">
                                     <label for="it_title">Item Title <span>*</span></label>
                                     <input type="text" class="form-control" id="it_title"
-                                           placeholder="Title" name="title" required="">
+                                           placeholder="Title" name="title" required="" autofocus value="{{$gallery->title}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="it_author">Item Author <span>*</span></label>
                                     <input type="text" class="form-control" id="it_author"
-                                           placeholder="Author" name="author" required="">
+                                           placeholder="Name" name="author" required="" value="{{$gallery->author}}" >
                                 </div>
 
                                 <div class="form-group">
                                     <label for="it_description">Item Description <span>*</span></label>
                                     <input type="text" class="form-control" id="it_description"
-                                           placeholder="Description" name="description" required="">
+                                           placeholder="Description" name="description" required="" value="{{$gallery->description}}">
                                 </div>
 
                                 <div class="form-group">
@@ -44,13 +46,17 @@
                                     <select class="form-control" id="exampleSelect" name="topic" required="">
                                         <option value="" selected="">Add a category here</option>
                                         @foreach($category as $cat)
-                                            <option value="{{ $cat->name }}">{{ $cat->name }}</option>
+                                            @if($cat->name == $gallery->topic)
+                                                <option selected value="{{ $cat->name }}">{{ $cat->name }}</option>
+                                            @else
+                                                <option value="{{ $cat->name }}">{{ $cat->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Item Image Here <span>*</span></label>
-                                    <input type="file" name="image" required="" class="file-upload-default">
+                                    <input type="file" name="image" class="file-upload-default">
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info"
                                                placeholder="Upload Image">
@@ -64,7 +70,7 @@
                                 <div class="form-check form-check-flat form-check-primary">
                                     <label class="form-check-label">
                                         <input type="checkbox" value="1" name="add_in_slider" class="form-check-input"> Add to slider </label>
-{{--                                    @if(old('is_current', $identity->is_current)) checked @endif>--}}
+                                    {{--                                    @if(old('is_current', $identity->is_current)) checked @endif>--}}
                                 </div>
 
                                 <br>

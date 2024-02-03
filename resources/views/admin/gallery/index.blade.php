@@ -23,7 +23,7 @@
                                     <th>*</th>
                                     <th>Title</th>
                                     <th>Author</th>
-                                    <th>Topic</th>
+                                    <th>Category</th>
                                     <th>Description</th>
                                     <th>Appear In slider</th>
                                     <th>Connected product</th>

@@ -15,9 +15,12 @@
                             {{$row->description}}
                         </div>
                         <div class="buttons">
-                            <button><a href="{{route('product_details',$row->product_id)}}" class="option1">
-                                    SEE MORE
-                                </a></button>
+                            @if($row->product_id)
+                                <button><a href="{{route('product_details',$row->product_id)}}" class="option1">
+                                        SEE MORE
+                                    </a></button>
+                            @endif
+
 {{--                            <button>SUBSCRIBE</button>--}}
                         </div>
                     </div>
