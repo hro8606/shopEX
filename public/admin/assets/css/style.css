@@ -21134,10 +21134,13 @@ div.tagsinput {
 
 /* style for gallery page in admin */
 
-.gallery_admin_section table img :hover{
+.gallery_admin_section table img :hover ,
+.product_admin_section table img :hover {
     cursor: pointer;
 }
-.gallery_admin_section .popup_image {
+
+.gallery_admin_section .popup_image ,
+.product_admin_section .popup_image {
     position: fixed;
     top: 0; left: 0;
     background: rgba(0,0,0,0.9);
@@ -21146,7 +21149,8 @@ div.tagsinput {
     z-index: 10000;
     display: none;
 }
-.gallery_admin_section .popup_image span {
+.gallery_admin_section .popup_image span ,
+.product_admin_section .popup_image span {
     position: absolute;
     top: 0; right: 10px;
     font-size: 60px;
@@ -21155,7 +21159,8 @@ div.tagsinput {
     cursor: pointer;
     z-index: 10000;
 }
-.gallery_admin_section .popup_image img {
+.gallery_admin_section .popup_image img ,
+.product_admin_section .popup_image img {
     position: absolute;
     top: 20%;
     right: 50%;
@@ -21166,7 +21171,8 @@ div.tagsinput {
     object-fit: cover;
 }
 @media(max-width: 768px){
-    gallery_admin_section .popup_image img {
+   .gallery_admin_section .popup_image img ,
+   .product_admin_section .popup_image img {
         width: 95%;
     }
 }

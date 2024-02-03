@@ -249,13 +249,23 @@
     }
     });
 
-$(".gallery_admin_section table .gallery_image").on( "click", function() {
-            let imgSrc = this.src;
-    $('.gallery_admin_section .popup_image').css("display", "block");
-    $('.gallery_admin_section .popup_image img').attr('src', imgSrc);
-    } );
-    $(".gallery_admin_section .popup_image span").add('.gallery_admin_section .popup_image').on( "click", function() {
+
+    /*script for showing the images when clicking on it in admin gallery and product pages*/
+    $(".gallery_admin_section table .gallery_image").on("click", function () {
+        let imgSrc = this.src;
+        $('.gallery_admin_section .popup_image').css("display", "block");
+        $('.gallery_admin_section .popup_image img').attr('src', imgSrc);
+    });
+    $(".gallery_admin_section .popup_image span").add('.gallery_admin_section .popup_image').on("click", function () {
         $('.gallery_admin_section .popup_image').css("display", "none");
-    } );
+    });
+    $(".product_admin_section table .gallery_image").on("click", function () {
+        let imgSrc = this.src;
+        $('.product_admin_section .popup_image').css("display", "block");
+        $('.product_admin_section .popup_image img').attr('src', imgSrc);
+    });
+    $(".product_admin_section .popup_image span").add('.product_admin_section .popup_image').on("click", function () {
+        $('.product_admin_section .popup_image').css("display", "none");
+    });
 
 })(jQuery);

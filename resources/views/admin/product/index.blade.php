@@ -4,7 +4,7 @@
 
 <div class="main-panel">
             <div class="content-wrapper">
-                <div class="">
+                <div class="product_admin_section">
                     @if(session('status'))
                         <div class="row">
                             <div class="alert alert-success">
@@ -45,7 +45,7 @@
                                         <td>{{$prod->updated_at->diffForHumans()}}</td>
                                         <td>
 {{--                                            <img class="img_size" src="../storage/{{$prod->image}}">--}}
-                                            <img src="{{ url('storage/product/'.$prod->image) }}" alt="Image" title="" />
+                                            <img src="{{ url('storage/product/'.$prod->image) }}" alt="Image" title="" class="gallery_image" />
                                             </td>
                                         <td style="display: flex">
                                             <a class="btn btn-warning mr-1" href="{{route('product.edit',$prod->id)}}">Edit</a>
@@ -63,8 +63,11 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
+                        <div class="popup_image">
+                            <span>&times;</span>
+                            <img src="" alt="">
+                        </div>
                 </div>
             </div>
         </div>
