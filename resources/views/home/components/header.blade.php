@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{route("/")}}#product_section">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("gallery.index")}}">Gallery</a>
+                        <a class="nav-link" href="{{route("photo_gallery.index")}}">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#footer_section">Contact</a>

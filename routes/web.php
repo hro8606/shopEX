@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -22,8 +23,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'index'])->name('/');
 //products routes for regular users
 Route::get('/product_details/{product}', [HomeController::class,'showProduct'])->name('product_details');
-
-Route::get('/gallery',[HomeController::class,'indexGallery'])->name('gallery.index');
+//route for gallery page for regular users
+Route::get('/photo_gallery',[GalleryController::class,'indexGalleryFront'])->name('photo_gallery.index');
 
 
 Route::middleware([
@@ -47,6 +48,8 @@ Route::middleware([
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    Route::resource('/gallery',GalleryController::class);
 
 //    Route::get('/redirect',[HomeController::class,'redirect']);
 });

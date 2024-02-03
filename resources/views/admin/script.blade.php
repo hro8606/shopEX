@@ -18,5 +18,6 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
+{{--<script src="{{asset('admin/assets/js/script.js')}}"></script>--}}
 <script src="{{asset('admin/assets/js/file-upload.js')}}"></script>
 <!-- End custom js for this page -->

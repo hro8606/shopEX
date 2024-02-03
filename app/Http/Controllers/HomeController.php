@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,14 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $product = Product::paginate(10);
-
-        return view('home.userpage')->with(compact('product'));
-    }
-
-    public function indexGallery(){
-
-//        return view('home.userpage')->with(compact('images'));
-        return view('home.gallery');
+        $slider = Gallery::where('add_in_slider', '1')->get();
+        return view('home.userpage')->with(compact('product','slider'));
     }
 
     public function redirect()
